@@ -26,8 +26,7 @@ if (isset($_POST['mobile'])) {
             $_SESSION['user_name_last']=$main_user['last_name'];
             $_SESSION['user_mobile']=$main_user['mobile'];
             $_SESSION['user_birthday']=$main_user['birthday'];
-    
-
+           
            $_SESSION['first_name'] = $mobile;
              header("Location: profile.php");
     }

@@ -33,6 +33,7 @@ include("header.php");
 ?> 
         <div class="weekend">
         <?php
+           
             $first_name=  $_SESSION['user_name_us'];
             $last_name = $_SESSION['user_name_last'];
 
@@ -45,62 +46,86 @@ include("header.php");
               $i++;
             }
    
-              
+          
         
             if($i <3){
 
           
             $sql =  "SELECT * FROM `workout`";
             //mon
-            if(isset($_POST["Monday"])){
           
-              $Monday = date( 'Y-m-d', strtotime( 'Monday this week' ) );
-
-
-              // $qsl = "SELECT COUNT(*) FROM workout WHERE date = $Monday";
-            
-              // if($qsl=1){
+            if(isset($_POST["Monday"])){
+                $Monday = date( 'Y-m-d', strtotime( 'Monday this week' ) );
+                $sql =  "INSERT INTO `workout` (first_name, last_name, Date) VALUES ('$first_name', '$last_name','$Monday')";
+                mysqli_query($con, $sql) or die(mysqli_error($con));
              
-              $sql =  "INSERT INTO `workout` (first_name, last_name, Date) VALUES ('$first_name', '$last_name','$Monday')";
-              mysqli_query($con, $sql) or die(mysqli_error($con));
-            //   }else{
-
-            //     echo '<div id="content-blocker">
-            //     <div class=err_block>Заного незя
-            //     <input type="button" value="Закрыть" onclick=clewind() class="clickeror">
-            //     </div>
-            //   </div>'; 
-            // }
+                echo '<div id="content-blocker">
+                <div class=err_block>Вы записались на тренировку
+                <input type="button" value="Закрыть" onclick=clewind() class="clickeror">
+                </div>
+                </div>'; 
             }
+
+
             //tue
             if(isset($_POST["Tuesday"])){
               $Tuesday = date( 'Y-m-d', strtotime( 'Tuesday this week' ) );
               $sql =  "INSERT INTO `workout` (first_name, last_name, Date) VALUES ('$first_name', '$last_name','$Tuesday')";
               mysqli_query($con, $sql) or die(mysqli_error($con));
+
+              echo '<div id="content-blocker">
+              <div class=err_block>Вы записались на тренировку
+              <input type="button" value="Закрыть" onclick=clewind() class="clickeror">
+              </div>
+              </div>'; 
             }
             //wen
             if(isset($_POST["Wednesday"])){
               $Wednesday = date( 'Y-m-d', strtotime( 'Wednesday this week' ) );
               $sql =  "INSERT INTO `workout` (first_name, last_name, Date) VALUES ('$first_name', '$last_name','$Wednesday')";
               mysqli_query($con, $sql) or die(mysqli_error($con));
+
+              echo '<div id="content-blocker">
+              <div class=err_block>Вы записались на тренировку
+              <input type="button" value="Закрыть" onclick=clewind() class="clickeror">
+              </div>
+              </div>'; 
             }
             //thu
             if(isset($_POST["Thursday"])){
               $Thursday = date( 'Y-m-d', strtotime( 'Thursday this week' ) );
               $sql =  "INSERT INTO `workout` (first_name, last_name, Date) VALUES ('$first_name', '$last_name','$Thursday')";
               mysqli_query($con, $sql) or die(mysqli_error($con));
+
+              echo '<div id="content-blocker">
+              <div class=err_block>Вы записались на тренировку
+              <input type="button" value="Закрыть" onclick=clewind() class="clickeror">
+              </div>
+              </div>'; 
             }
             //fri
             if(isset($_POST["Friday"])){
               $Friday = date( 'Y-m-d', strtotime( 'Friday this week' ) );
               $sql =  "INSERT INTO `workout` (first_name, last_name, Date) VALUES ('$first_name', '$last_name','$Friday')";
               mysqli_query($con, $sql) or die(mysqli_error($con));
+
+              echo '<div id="content-blocker">
+              <div class=err_block>Вы записались на тренировку
+              <input type="button" value="Закрыть" onclick=clewind() class="clickeror">
+              </div>
+              </div>'; 
             }
             //sat
             if(isset($_POST["Saturday"])){
               $Saturday = date( 'Y-m-d', strtotime( 'Saturday this week' ) );
               $sql =  "INSERT INTO `workout` (first_name, last_name, Date) VALUES ('$first_name', '$last_name','$Saturday')";
               mysqli_query($con, $sql) or die(mysqli_error($con));
+
+              echo '<div id="content-blocker">
+              <div class=err_block>Вы записались на тренировку
+              <input type="button" value="Закрыть" onclick=clewind() class="clickeror">
+              </div>
+              </div>'; 
             }
           }
           else{

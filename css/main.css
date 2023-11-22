@@ -251,12 +251,12 @@ text-align: center;
 
 .main-info{
   display: flex;
+  justify-content: center;
   flex-direction: column;
-  width: 80%;
 
 
   height: auto;
-  justify-content: center;
+
   text-align: center;
 
  
