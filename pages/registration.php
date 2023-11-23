@@ -63,7 +63,7 @@ if(isset($_REQUEST['first_name'])){
 
         <div class="main-info">
         <form action="" class="form" method="post">
-<h1 class="login-title">Регистрация</h1>
+        <h1 class="login-title">Регистрация</h1>
         <input type="text" class="login-input" name="first_name" placeholder="имя" required />
         <input type="text" class="login-input" name="last_name" placeholder="фамилия" required>
 
@@ -71,8 +71,7 @@ if(isset($_REQUEST['first_name'])){
 
         <input type="date" class="login-input" name="birthday" placeholder="Дата рождения" required>
 
-
-        <input type="password" class="login-input" name="password" placeholder="Password" required>
+        <input type="password" class="login-input" name="password" placeholder="Пароль" required>
         <input type="submit" name="submit" value="Register" class="login-button">
         <p class="link"><a href="login.php">Заергистрированы?</a></p>
 

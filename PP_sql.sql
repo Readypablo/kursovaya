@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Ноя 21 2023 г., 19:46
+-- Время создания: Ноя 23 2023 г., 21:01
 -- Версия сервера: 8.0.30
 -- Версия PHP: 7.2.34
 
@@ -20,6 +20,20 @@ SET time_zone = "+00:00";
 --
 -- База данных: `PP_sql`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `collective`
+--
+
+CREATE TABLE `collective` (
+  `id` int NOT NULL,
+  `first_name` varchar(100) NOT NULL,
+  `last_name` varchar(100) NOT NULL,
+  `experience` varchar(100) NOT NULL,
+  `img` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -64,13 +78,17 @@ CREATE TABLE `workout` (
 --
 
 INSERT INTO `workout` (`id`, `first_name`, `last_name`, `date`) VALUES
-(78, 'admin', 'admin', '2023-11-20'),
-(79, 'admin', 'admin', '2023-11-20'),
-(80, 'admin', 'admin', '2023-11-20');
+(129, 'admin', 'admin', '2023-11-21');
 
 --
 -- Индексы сохранённых таблиц
 --
+
+--
+-- Индексы таблицы `collective`
+--
+ALTER TABLE `collective`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Индексы таблицы `users`
@@ -89,6 +107,12 @@ ALTER TABLE `workout`
 --
 
 --
+-- AUTO_INCREMENT для таблицы `collective`
+--
+ALTER TABLE `collective`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
@@ -98,7 +122,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `workout`
 --
 ALTER TABLE `workout`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=130;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
