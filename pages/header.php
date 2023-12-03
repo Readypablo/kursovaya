@@ -1,5 +1,5 @@
 
-
+<?php  require('bd_connect/db.php'); ?>
 
 <!DOCTYPE html>
 <html>
@@ -98,9 +98,43 @@
             <input type='button' value='Войти' class='button-login'></a>
             </div>";
             }
-            ?>  
 
-            
+
+            ?> 
+                <?php
+
+                      $sql = "SELECT * FROM `workout`";
+                      $result = $con ->query($sql);
+                      for($data = []; $row = mysqli_fetch_assoc($result); $data[]=$row)
+                      {
+                      }
+             
+                      $l =   date('Y-m-d',strtotime("+1 days"));
+                      
+                               
+                        foreach($data as $elem)
+                        {
+                            if($_SESSION['user_name_last'] ==$elem['last_name'] ){
+
+                                if($l == $elem['date']){
+
+                                    echo '<div class="measegge"><p>У вас предстоящие занятие!</p> 
+                                        <p>Дата : '.date('d/m',strtotime("+1 days")).'</p> 
+                                        </div>   ';
+                                }
+
+
+
+                            }
+                        }
+                       
+                  
+                
+                ?>
+
+          
+
+
         </div>
       
 

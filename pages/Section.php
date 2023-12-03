@@ -47,9 +47,10 @@ include("header.php");
             }
    
           
-        
+        // эт опроверка на количество, не больше 3х
             if($i <3){
 
+              // внесение записи на каждый день недели
           
             $sql =  "SELECT * FROM `workout`";
             //mon
@@ -138,11 +139,12 @@ include("header.php");
 
 
 
-            
+            // туту нас вывод самих блоков записи
               $this_monday = new DateTime('Monday this week');
               $next_monday = new DateTime('Monday next week');
               $interval    = new DateInterval('P1D');
               $datePeriod  = new DatePeriod($this_monday, $interval, $next_monday);
+              // расстовление даты 
               foreach($datePeriod as $day) {
 
           
@@ -154,11 +156,11 @@ include("header.php");
               <section >Тренер</section>
               <section class="instruktorname">Хафисов Ю.Г.</section>
               <form method="post" class="zapisform">
-              <input type="submit" value="Записаться" name='.$day->format('l').' class="trenirovkazps">
+              <input type="submit" value="Записаться" name='.$day->format('l').' class="trenirovkazps"> 
               </form>
               </div>'
               ;
-
+                // у каждой кнопки имя дня недели
 
               
               }

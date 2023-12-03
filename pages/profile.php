@@ -78,7 +78,11 @@ include("header.php");
                                         
                                       
                                         }  if($i==0){
+
                                             echo ' <h1>Тренировок нет</h1>';
+                                            $l =   date('Y/m/d',strtotime("-1 days"));
+                                            $z = date('Y/m/d',strtotime("-1 days"));
+                                          
                                         } ?>      
 
                                             </div>  

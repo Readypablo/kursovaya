@@ -24,13 +24,14 @@ if(isset($_REQUEST['first_name'])){
     $birthday = stripcslashes($_REQUEST['birthday']);
     $birthday = mysqli_real_escape_string($con,$birthday);
 
-    // пороль
+    // пароль
     $password = stripcslashes($_REQUEST['password']);
     $password = mysqli_real_escape_string($con,$password);
 
  
 
-    $query = "INSERT into `users` (first_name, last_name, mobile, birthday,password) VALUES ('$first_name', '$last_name', '$mobile', '$birthday', '$password')";
+    $query = "INSERT into `users` (first_name, last_name, mobile, birthday,password)
+     VALUES ('$first_name', '$last_name', '$mobile', '$birthday', '$password')";
 
 
 
@@ -41,14 +42,14 @@ if(isset($_REQUEST['first_name'])){
         echo "      <div class='main-content'>
         <div class='main-info'><div class='form'>
         <h3>Регистрация прошла  спешно!</h3><br/>
-        <p class='link'>Вход в профиль<a href='login.php'>Login</a></p>
+        <p class='link'>Вход в профиль<a href='login.php'> вход</a></p>
         </div>  </div>
         </div>";
     }else{
         echo "      <div class='main-content'>
         <div class='main-info'><div class='form'>
         <h3>Вы заполнил не все поля .</h3><br/>
-        <p class='link'>Click here to <a href='registration.php'>registration</a> again.</p>
+        <p class='link'>Попробуйте <a href='registration.php'>registration</a> Заного.</p>
         </div>  </div>
         </div>";
          }    
@@ -64,7 +65,7 @@ if(isset($_REQUEST['first_name'])){
         <div class="main-info">
         <form action="" class="form" method="post">
         <h1 class="login-title">Регистрация</h1>
-        <input type="text" class="login-input" name="first_name" placeholder="имя" required />
+        <input type="text"  class="login-input" name="first_name" placeholder="имя" required />
         <input type="text" class="login-input" name="last_name" placeholder="фамилия" required>
 
         <input type="text" class="login-input"  minlength="8" name="mobile" placeholder="телефон" required>
@@ -72,7 +73,7 @@ if(isset($_REQUEST['first_name'])){
         <input type="date" class="login-input" name="birthday" placeholder="Дата рождения" required>
 
         <input type="password" class="login-input" name="password" placeholder="Пароль" required>
-        <input type="submit" name="submit" value="Register" class="login-button">
+        <input type="submit" name="submit" value="Регистрация" class="login-button">
         <p class="link"><a href="login.php">Заергистрированы?</a></p>
 
 </form>
@@ -82,7 +83,8 @@ if(isset($_REQUEST['first_name'])){
 
 
 
-
+<script defer src="../js/min.js"></script>
+<script defer src="../js/input.js"></script>
 <script >
     if ( window.history.replaceState ) {
   window.history.replaceState( null, null, window.location.href );

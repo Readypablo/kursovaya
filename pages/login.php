@@ -60,6 +60,8 @@ if (isset($_POST['mobile'])) {
         </div>
 
 </div><?php }?>
+<script defer src="../js/min.js"></script>
+<script defer src="../js/input.js"></script>
 <script >
     if ( window.history.replaceState ) {
   window.history.replaceState( null, null, window.location.href );
