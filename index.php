@@ -77,56 +77,12 @@
         <div class="menu-elements-none">
 
 
-<?php
-
-require('pages/bd_connect/db.php'); 
-if(isset($_SESSION["first_name"])){
-echo " <a href='pages/bd_connect/logout.php'>
-<input type='button' value='Выйти' class='button-login'></a>
-<br> <br>
-<a href='pages/profile.php'>
-<input type='button' value='Профиль' class='button-login'></a>
-</div>
-";
-}
-else{
-echo "<a href='pages/login.php'>
+<a href='pages/login.php'>
 <input type='button' value='Войти' class='button-login'></a>
-</div>";
-}
-
-
-?> 
-    <?php
-
-          $sql = "SELECT * FROM `workout`";
-          $result = $con ->query($sql);
-          for($data = []; $row = mysqli_fetch_assoc($result); $data[]=$row)
-          {
-          }
- 
-          $l =   date('Y-m-d',strtotime("+1 days"));
-          
-                   
-            foreach($data as $elem)
-            {
-                if($_SESSION['user_name_last'] ==$elem['last_name'] ){
-
-                    if($l == $elem['date']){
-
-                        echo '<div class="measegge"><p>У вас предстоящие занятие!</p> 
-                            <p>Дата : '.date('d/m',strtotime("+1 days")).'</p> 
-                            </div>   ';
-                    }
+</div>
 
 
 
-                }
-            }
-           
-      
-    
-    ?>
 
 
 

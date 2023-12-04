@@ -92,18 +92,8 @@
             <input type='button' value='Профиль' class='button-login'></a>
             </div>
             ";
-            }
-            else{
-            echo "<a href='login.php'>
-            <input type='button' value='Войти' class='button-login'></a>
-            </div>";
-            }
 
-
-            ?> 
-                <?php
-
-                      $sql = "SELECT * FROM `workout`";
+            $sql = "SELECT * FROM `workout`";
                       $result = $con ->query($sql);
                       for($data = []; $row = mysqli_fetch_assoc($result); $data[]=$row)
                       {
@@ -127,10 +117,16 @@
 
                             }
                         }
-                       
-                  
-                
-                ?>
+            }
+            else{
+            echo "<a href='login.php'>
+            <input type='button' value='Войти' class='button-login'></a>
+            </div>";
+            }
+
+
+            ?> 
+               
 
           
 
