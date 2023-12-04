@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Ноя 23 2023 г., 21:01
+-- Время создания: Дек 04 2023 г., 21:27
 -- Версия сервера: 8.0.30
 -- Версия PHP: 7.2.34
 
@@ -35,6 +35,17 @@ CREATE TABLE `collective` (
   `img` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Дамп данных таблицы `collective`
+--
+
+INSERT INTO `collective` (`id`, `first_name`, `last_name`, `experience`, `img`) VALUES
+(1, 'Екатерина', 'Смирнова', 'Пауэрлифтинг 10', '1.jpg'),
+(2, 'Мария ', 'Соколова', 'Легкая атлетика 8', '2.jpg'),
+(3, 'Ирина', 'Васильева', 'Аэробика 5', '4.jpg'),
+(4, 'Наталья', 'Павлова', 'Директор 15', '5.jpg'),
+(5, 'Татьяна', 'Горбунова', 'Хоккей 11', '6.jpg');
+
 -- --------------------------------------------------------
 
 --
@@ -58,7 +69,9 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `mobile`, `birthday`, `pas
 (1, 'admin', 'admin', '12345678', '2023-06-07', '123123'),
 (2, '2', '2', '222222222222', '2023-06-09', '2'),
 (3, '2', '2', '222222222222', '2023-06-03', '2'),
-(4, 'игорь', 'линков', '123456889', '2023-06-10', '321321');
+(4, 'игорь', 'линков', '123456889', '2023-06-10', '321321'),
+(5, '2', '2', '222222222222', '2023-11-02', '3'),
+(7, 'a', 'a', '2', '2023-11-30', 'a');
 
 -- --------------------------------------------------------
 
@@ -78,7 +91,7 @@ CREATE TABLE `workout` (
 --
 
 INSERT INTO `workout` (`id`, `first_name`, `last_name`, `date`) VALUES
-(129, 'admin', 'admin', '2023-11-21');
+(148, 'admin', 'admin', '2023-12-05');
 
 --
 -- Индексы сохранённых таблиц
@@ -110,19 +123,19 @@ ALTER TABLE `workout`
 -- AUTO_INCREMENT для таблицы `collective`
 --
 ALTER TABLE `collective`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT для таблицы `workout`
 --
 ALTER TABLE `workout`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=130;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=149;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -15,40 +15,30 @@ include("header.php");
 
 <div class="cont-koll">
 
-    <div class="block-sotr">
-        <div class="img-sotr">
-        <img src="..\img\direktor.jpg" class="img-kollektiv">
-        </div>
+<?php 
 
-        <div class="info-sotr">
-          <p>Жагрин Алексей Геннадьевич</p>
-          <p>директор МБУ «СОЦ «Никельщик»</p>
-        </div>
-    </div>
+$sql2 = 'SELECT * from collective ';
+$result = $con->query($sql2);
 
-
-    <div class="block-sotr">
-        <div class="img-sotr">
-        <img src="..\img\zamdir.jpg" class="img-kollektiv">
-        </div>
-
-        <div class="info-sotr">
-          <p>Привалова Ольга Сергеевна</p>
-          <p>Заместитель директора</p>
-        </div>
-    </div>
+while ($row = $result->fetch_assoc()) {
+    $id= $row['id'];
+    echo '
+    <div class="popular-card">
+    <img src="../img/'.$row['img'].'" class="img-sotr">
+         <h2 class="info-sotr">'.$row['first_name'].' '.$row['last_name'].'</h2>
+       
+         <p class="experience">'.$row['experience'].' лет стажа</p>' ;
+         
+        
+        
+          echo ' </div>';
+}
 
 
-    <div class="block-sotr">
-        <div class="img-sotr">
-        <img src="..\img\buxgal.jpg" class="img-kollektiv">
-        </div>
+?>
 
-        <div class="info-sotr">
-          <p>Яковлева Людмила Васильевн</p>
-          <p>Главный бухгалтер</p>
-        </div>
-  </div>
+
+
 
 </div>
 
